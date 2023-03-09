@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Typography, CardContent, CardActions } from '@mui/material';
 
-interface SmallWeatherCardProps {
+export interface SmallWeatherCardProps {
     /**
      * Describe the weather condition based on the WW WMO Weather Interpretation Codes
      * TODO: Write the main WMO Code translation in the parent component.
