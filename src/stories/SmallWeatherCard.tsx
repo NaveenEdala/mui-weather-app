@@ -4,7 +4,7 @@ import {
 	Card,
 	Typography,
 	CardContent,
-    CardMedia,
+	CardMedia,
 	CardActions,
 	CardHeader,
 } from "@mui/material";
@@ -16,10 +16,10 @@ export interface SmallWeatherCardProps {
 	 */
 	weatherCondition: string;
 
-    /**
-     * Optional image URL to display on card showing weather.
-     */
-    weatherConditionImage?: string;
+	/**
+	 * Optional image URL to display on card showing weather.
+	 */
+	weatherConditionImage?: string;
 
 	/**
 	 * Optional icon showing the current weather condition.
@@ -51,7 +51,7 @@ export interface SmallWeatherCardProps {
 export const SmallWeatherCard = ({
 	weatherCondition,
 	weatherConditionIcon,
-    weatherConditionImage,
+	weatherConditionImage,
 	weatherUnits = "°C",
 	temperature,
 	apparentTemperature,
@@ -60,7 +60,9 @@ export const SmallWeatherCard = ({
 	let cardDate: Date = new Date(timestamp);
 	return (
 		<Card sx={{ maxWidth: 400 }}>
-            { weatherConditionImage && <CardMedia sx={{ height: 150 }} image={weatherConditionImage} />}
+			{weatherConditionImage && (
+				<CardMedia sx={{ height: 150 }} image={weatherConditionImage} />
+			)}
 			<CardContent>
 				<Typography variant="body1" gutterBottom color="text.secondary">
 					{cardDate.toLocaleTimeString("en-US", {
@@ -75,12 +77,12 @@ export const SmallWeatherCard = ({
 				<Typography color="text.primary" variant="h3">
 					{temperature} {weatherUnits}
 				</Typography>
-                <Typography variant="body1" gutterBottom color="text.secondary">
-                    Feels like {apparentTemperature} {weatherUnits}
-                </Typography>
-                <Typography variant="body1" gutterBottom color="text.secondary">
-                    {weatherConditionIcon} {weatherCondition}
-                </Typography>
+				<Typography variant="body1" gutterBottom color="text.secondary">
+					Feels like {apparentTemperature} {weatherUnits}
+				</Typography>
+				<Typography variant="body1" gutterBottom color="text.secondary">
+					{weatherConditionIcon} {weatherCondition}
+				</Typography>
 			</CardContent>
 		</Card>
 	);
