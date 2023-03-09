@@ -1,44 +1,87 @@
-import React from 'react';
-import { Card, Typography, CardContent, CardActions } from '@mui/material';
+import React from "react";
+import {
+	Box,
+	Card,
+	Typography,
+	CardContent,
+    CardMedia,
+	CardActions,
+	CardHeader,
+} from "@mui/material";
 
 export interface SmallWeatherCardProps {
-    /**
-     * Describe the weather condition based on the WW WMO Weather Interpretation Codes
-     * TODO: Write the main WMO Code translation in the parent component.
-     */
-    weatherCondition: string;
+	/**
+	 * Describe the weather condition based on the WW WMO Weather Interpretation Codes
+	 * TODO: Write the main WMO Code translation in the parent component.
+	 */
+	weatherCondition: string;
 
     /**
-     * Optional icon showing the current weather condition.
+     * Optional image URL to display on card showing weather.
      */
-    weatherConditionIcon?: React.ReactNode;
+    weatherConditionImage?: string;
 
-    /**
-     * The units in which the temperature is represented.
-     */
-    weatherUnits: '°C' | '°F';
+	/**
+	 * Optional icon showing the current weather condition.
+	 */
+	weatherConditionIcon?: React.ReactNode;
 
-    /**
-     * The absolute temperature in numerical value.
-     */
-    temperature: number;
+	/**
+	 * The units in which the temperature is represented.
+	 */
+	weatherUnits: "°C" | "°F";
 
-    /**
-     * The perceived temperature, combining wind, humidity and solar factors.
-     */
-    apparentTemperature: number;
+	/**
+	 * The absolute temperature in numerical value.
+	 */
+	temperature: number;
 
-    /**
-     * Timestamp as of when this data is shown in ISO 8601 format string.
-     * @example `2023-11-17T04:00`
-     */
-    timestamp: string;
+	/**
+	 * The perceived temperature, combining wind, humidity and solar factors.
+	 */
+	apparentTemperature: number;
+
+	/**
+	 * Timestamp as of when this data is shown in ISO 8601 format string.
+	 * @example `2023-11-17T04:00`
+	 */
+	timestamp: string;
 }
 
-export const SmallWeatherCard = ({weatherCondition, weatherConditionIcon, weatherUnits = '°C', temperature, apparentTemperature, timestamp}: SmallWeatherCardProps) => {
-    return (
-        <Card>
-            This is a card!
-        </Card>
-    );
+export const SmallWeatherCard = ({
+	weatherCondition,
+	weatherConditionIcon,
+    weatherConditionImage,
+	weatherUnits = "°C",
+	temperature,
+	apparentTemperature,
+	timestamp,
+}: SmallWeatherCardProps) => {
+	let cardDate: Date = new Date(timestamp);
+	return (
+		<Card sx={{ maxWidth: 400 }}>
+            { weatherConditionImage && <CardMedia sx={{ height: 150 }} image={weatherConditionImage} />}
+			<CardContent>
+				<Typography variant="body1" gutterBottom color="text.secondary">
+					{cardDate.toLocaleTimeString("en-US", {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+						hour: "numeric",
+						minute: "numeric",
+						hour12: false,
+					})}
+				</Typography>
+				<Typography color="text.primary" variant="h3">
+					{temperature} {weatherUnits}
+				</Typography>
+                <Typography variant="body1" gutterBottom color="text.secondary">
+                    Feels like {apparentTemperature} {weatherUnits}
+                </Typography>
+                <Typography variant="body1" gutterBottom color="text.secondary">
+                    {weatherConditionIcon} {weatherCondition}
+                </Typography>
+			</CardContent>
+		</Card>
+	);
 };

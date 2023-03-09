@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof SmallWeatherCard> = (args) => <SmallWeathe
 export const Default = Template.bind({});
 Default.args = {
     weatherCondition: "Sunny",
+    weatherConditionImage: "https://upload.wikimedia.org/wikipedia/commons/2/26/Sunny_day_in_India.jpg",
     weatherUnits: "°C",
     temperature: 30,
     apparentTemperature: 31.3,
