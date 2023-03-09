@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SmallWeatherCard } from "./SmallWeatherCard";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 export default {
 	title: "WeatherApp/Small Weather Card",
@@ -14,6 +15,7 @@ const Template: ComponentStory<typeof SmallWeatherCard> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
 	weatherCondition: "Sunny",
+    weatherConditionIcon: <WbSunnyIcon />,
 	weatherConditionImage:
 		"https://upload.wikimedia.org/wikipedia/commons/2/26/Sunny_day_in_India.jpg",
 	weatherUnits: "°C",
