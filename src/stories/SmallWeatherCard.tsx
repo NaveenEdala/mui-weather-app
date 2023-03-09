@@ -1,13 +1,5 @@
 import React from "react";
-import {
-	Box,
-	Card,
-	Typography,
-	CardContent,
-	CardMedia,
-	CardActions,
-	CardHeader,
-} from "@mui/material";
+import { Box, Card, Typography, CardContent, CardMedia, CardActions, CardHeader } from "@mui/material";
 
 export interface SmallWeatherCardProps {
 	/**
@@ -59,10 +51,8 @@ export const SmallWeatherCard = ({
 }: SmallWeatherCardProps) => {
 	let cardDate: Date = new Date(timestamp);
 	return (
-		<Card sx={{ maxWidth: 400 }}>
-			{weatherConditionImage && (
-				<CardMedia sx={{ height: 150 }} image={weatherConditionImage} />
-			)}
+		<Card sx={{ maxWidth: 250 }}>
+			{weatherConditionImage && <CardMedia sx={{ height: 125 }} image={weatherConditionImage} />}
 			<CardContent>
 				<Typography variant="body1" gutterBottom color="text.secondary">
 					{cardDate.toLocaleTimeString("en-US", {
@@ -78,10 +68,7 @@ export const SmallWeatherCard = ({
 					{temperature} {weatherUnits}
 				</Typography>
 				<Typography variant="body1" gutterBottom color="text.secondary">
-					Feels like {apparentTemperature} {weatherUnits}
-				</Typography>
-				<Typography variant="body1" gutterBottom color="text.secondary">
-					{weatherConditionIcon} {weatherCondition}
+					{weatherConditionIcon} {weatherCondition}, feels like {apparentTemperature} {weatherUnits}
 				</Typography>
 			</CardContent>
 		</Card>
