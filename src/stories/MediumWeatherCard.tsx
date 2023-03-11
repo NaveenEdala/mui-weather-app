@@ -65,6 +65,9 @@ export const MediumWeatherCard = ({
 					<Typography color="text.primary" variant="h3">
 						{temperature} {weatherUnits}
 					</Typography>
+					<Typography variant="body1" color="text.secondary">
+						{weatherConditionIcon} {weatherCondition}
+					</Typography>
 					<Box>
 						<Typography sx={{ mb: 1 }} variant="body1" gutterBottom color="text.secondary">
 							{cardDate.toLocaleTimeString("en-US", {

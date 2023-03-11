@@ -26,8 +26,7 @@ export const Rainy = Template.bind({});
 Rainy.args = {
 	weatherCondition: "Rainy",
 	weatherConditionIcon: <ShowerIcon />,
-	weatherConditionImage:
-		"https://upload.wikimedia.org/wikipedia/commons/3/32/GGB_refracts_in_rain_dropletes_original_1.JPG",
+	weatherConditionImage: "https://upload.wikimedia.org/wikipedia/commons/3/32/GGB_refracts_in_rain_dropletes_original_1.JPG",
 	weatherUnits: "°C",
 	temperature: -2.3,
 	apparentTemperature: 1.7,
