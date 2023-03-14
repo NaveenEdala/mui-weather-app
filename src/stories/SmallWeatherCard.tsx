@@ -54,7 +54,7 @@ export const SmallWeatherCard = ({
 		<Card sx={{ maxWidth: 250 }}>
 			{weatherConditionImage && <CardMedia sx={{ height: 125 }} image={weatherConditionImage} />}
 			<CardContent>
-				<Typography sx={{mb:1}} variant="body1" gutterBottom color="text.secondary">
+				<Typography sx={{ mb: 1 }} variant="body1" gutterBottom color="text.secondary">
 					{cardDate.toLocaleTimeString("en-US", {
 						year: "numeric",
 						month: "long",
@@ -70,7 +70,7 @@ export const SmallWeatherCard = ({
 				<Typography gutterBottom variant="body1" color="text.secondary">
 					Feels like {apparentTemperature} {weatherUnits}
 				</Typography>
-				<Typography sx={{mt: 1, mb: -1}} variant="body1" color="text.secondary">
+				<Typography sx={{ mt: 1, mb: -1 }} variant="body1" color="text.secondary">
 					{weatherConditionIcon} {weatherCondition}
 				</Typography>
 			</CardContent>
