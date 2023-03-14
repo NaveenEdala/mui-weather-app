@@ -76,6 +76,11 @@ export interface MediumWeatherCardProps {
 	timestamp: string;
 }
 
+/**
+ * Sample API call using all given props:
+ * https://api.open-meteo.com/v1/forecast?latitude=17.38&longitude=78.46&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,precipitation,weathercode,visibility,windspeed_10m,winddirection_10m
+ */
+
 export const MediumWeatherCard = ({
 	weatherCondition,
 	weatherConditionImage,
