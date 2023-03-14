@@ -34,6 +34,42 @@ export interface MediumWeatherCardProps {
 	apparentTemperature: number;
 
 	/**
+	 * The units and numerical value of relative humidity.
+	 */
+	relativeHumidity: number;
+	relativeHumidityUnits: string;
+
+	/**
+	 * The units and numerical value of probability of precipitation.
+	 */
+	precipitationProbability: number;
+	precipitationProbabilityUnits: string;
+
+	/**
+	 * The units and numerical value of amount of precipitation.
+	 */
+	precipitation: number;
+	precipitationUnits: string;
+
+	/**
+	 * The units and numerical value of visibility distance.
+	 */
+	visibility: number;
+	visibilityUnits: string;
+
+	/**
+	 * The units and numerical value of wind speed (at 10 metres from surface).
+	 */
+	windSpeed: number;
+	windSpeedUnits: string;
+
+	/**
+	 * The units and numerical value describing wind direction.
+	 */
+	windDirection: number;
+	windDirectionUnits: string;
+
+	/**
 	 * Timestamp as of when this data is shown in ISO 8601 format string.
 	 * @example `2023-11-17T04:00`
 	 */
@@ -47,6 +83,18 @@ export const MediumWeatherCard = ({
 	weatherUnits = "°C",
 	temperature,
 	apparentTemperature,
+	relativeHumidity,
+	relativeHumidityUnits,
+	precipitationProbability,
+	precipitationProbabilityUnits,
+	precipitation,
+	precipitationUnits,
+	visibility,
+	visibilityUnits,
+	windSpeed,
+	windSpeedUnits,
+	windDirection,
+	windDirectionUnits,
 	timestamp,
 }: MediumWeatherCardProps) => {
 	let cardDate: Date = new Date(timestamp);
