@@ -137,6 +137,11 @@ export const MediumWeatherCard = ({
 						</Typography>
 					</Box>
 				</Box>
+				<Box sx={{ display:'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+					<Typography variant="body1" color="text.secondary">
+						{relativeHumidity}{relativeHumidityUnits} Humidity
+					</Typography>
+				</Box>
 			</CardContent>
 		</Card>
 	);

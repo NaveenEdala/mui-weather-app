@@ -18,5 +18,7 @@ Default.args = {
     weatherCondition: "Sunny",
     weatherConditionIcon: <WbSunnyIcon />,
     weatherConditionImage: "https://upload.wikimedia.org/wikipedia/commons/2/26/Sunny_day_in_India.jpg",
-    weatherUnits: "°C"
+    weatherUnits: "°C",
+    relativeHumidity: 88,
+    relativeHumidityUnits: "%",
 };
