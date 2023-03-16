@@ -103,6 +103,9 @@ export const MediumWeatherCard = ({
 	timestamp,
 }: MediumWeatherCardProps) => {
 	let cardDate: Date = new Date(timestamp);
+	/**
+	 * TODO: NEEDS RELAYOUT, triple vertical boxes, middle only temp, left and right evenly spaced.
+	 */
 	return (
 		<Card sx={{ maxWidth: 750 }}>
 			{weatherConditionImage && <CardMedia sx={{ height: 250 }} image={weatherConditionImage} />}
@@ -139,7 +142,10 @@ export const MediumWeatherCard = ({
 				</Box>
 				<Box sx={{ display:'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
 					<Typography variant="body1" color="text.secondary">
-						{relativeHumidity}{relativeHumidityUnits} Humidity
+						{precipitationProbability}{precipitationProbabilityUnits} chance of showers
+					</Typography>
+					<Typography variant="body1" color="text.secondary">
+						{relativeHumidity}{relativeHumidityUnits} humidity
 					</Typography>
 				</Box>
 			</CardContent>

@@ -21,4 +21,6 @@ Default.args = {
     weatherUnits: "°C",
     relativeHumidity: 88,
     relativeHumidityUnits: "%",
+    precipitationProbability: 3,
+    precipitationProbabilityUnits: "%",
 };
